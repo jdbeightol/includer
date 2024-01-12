@@ -1,0 +1,7 @@
+This is an example of nested inclusion.
+
+#include includes/cats.txt
+
+#include includes/dogs.txt
+
+#include includes/people.txt

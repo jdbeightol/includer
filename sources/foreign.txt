@@ -1,0 +1,3 @@
+This is an example of including a file that doesn't use ascii letters.
+
+#include includes/こんにちは.txt

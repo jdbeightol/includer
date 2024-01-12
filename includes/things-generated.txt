@@ -1,0 +1,7 @@
+This is an example of nested inclusion.
+
+Cats are better than dogs.
+
+Dogs are better than cats.
+
+People are not better than cats or dogs.

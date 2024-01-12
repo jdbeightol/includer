@@ -1,0 +1,7 @@
+Let's try to nest some includes here...
+---
+
+#include includes/things-generated.txt
+
+---
+If that worked, the above section should talk about cats, dogs, and people.
