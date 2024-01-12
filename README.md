@@ -71,4 +71,5 @@ The `examples.mk` file includes the necessary targets
 
 ### README
 As a note, this readme itself is built from included files using the makefile.
-Feel free to play with it.
+Feel free to play with it.  I don't think it's a necessary pattern to break up
+readme files, but it sure is a fun example here.

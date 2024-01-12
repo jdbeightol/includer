@@ -11,7 +11,7 @@ $(INSTALL_DIR)/%: $(BUILD_DIR)/% $(INSTALL_DIR)
 	@cp -v $< $@
 	@chmod u+x $@
 
-README.md: examples/README.md includes/*.md
+README.md: examples/README.md
 	@cp $< $@
 
 all: $(patsubst sources/%,examples/%,$(wildcard sources/*))
