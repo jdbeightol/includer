@@ -11,8 +11,8 @@ $(INSTALL_DIR)/%: $(BUILD_DIR)/% $(INSTALL_DIR)
 	@cp -v $< $@
 	@chmod u+x $@
 
-README.md: sources/README.md includes/*.md
-	@./pre-process.sh $< $@
+README.md: examples/README.md includes/*.md
+	@cp $< $@
 
 all: $(patsubst sources/%,examples/%,$(wildcard sources/*))
 .PHONY: all
