@@ -67,7 +67,7 @@ you wish to build,
 make examples/example.txt
 ```
 
-The `examples.mk` file includes the necessary targets 
+The `examples.mk` file includes the necessary targets to build the examples.
 
 ### README
 As a note, this readme itself is built from included files using the makefile.
