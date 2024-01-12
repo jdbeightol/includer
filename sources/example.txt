@@ -1,0 +1,9 @@
+This is an example of a text file that can include other text files.
+
+#include includes/dog.txt
+
+#include includes/cat.txt
+
+#include includes/people.txt
+
+Isn't that cool?
