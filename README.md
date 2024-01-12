@@ -14,23 +14,33 @@ Include statements within `SOURCE` are resolved from the current working
 directory at the time of running pre-process.  If this isn't what you want,
 then be sure to change directories before running the tool.
 
-### Environment Variables
-The default include statement can be overridden by setting the `INCLUDER`
-environment variable prior to running the script.  e.g., if you wanted to use
-a commented include line that would be compatible with C-like languages, you
-could do the following:
+### Use Case
+The use case of this tool is to generate primitive files like configuration 
+markup languages (txt, ini, yaml, toml, not json lol, etc.) or
+[scripting languages that don't have a reliable dependency
+resolution mechanism](https://github.com/jdbeightol/framework).  This tool
+allows the author of a file to compose a single, distributable output file from
+many, better-organized files.
 
-```shell
-export INCLUDER="//include"
-pre-process source.c
-```
+### Motivation
+The motivating problem that spawned this tool was the inability to compose a
+[Hashicorp nomad](https://www.nomadproject.io/) job spec with multiple inline
+templates from external sources.  While future implementations of nomad may
+allow including external files from the host's machine at deployment time,
+the current HCL implementation in nomad requires template files to either be
+accessible within the the container itself (possibly downloaded as an artifact
+or mounted in from elsewhere) or specified inline using the `data = <<EOF`
+syntax.  This tool allowed me to use the `data = <<EOF` implementation with an
+include statement, so that the actual yaml files I wanted to include could be
+stored separately and opened individually with all the benefits of my editor of
+choice.
 
-Of course, using such a primitive tool to add includes into C-like
-languages that often have inclusion, importing, and their own macro definition
-langauges isn't likely to be useful.  Instead, the use case of this tool
-targets primitive files like configuration languages (txt, ini, yaml, toml,
-not json, etc.) or [scripting languages that don't have a reliable dependency
-resolution mechanism](https://github.com/jdbeightol/framework).
+As a bonus, I will likely also use this to replace my `framework.sh` bash
+scripts with single files that can be distributed without a dependency on
+how the user's environment is configured.  Storage is cheap, so shared
+dependencies just don't have the attractiveness that they used to, and runtime
+dependency linking/resolution just moves the development frustration to the
+user.
 
 ### Limitations
 Included file names should be able to include all printable characters except
