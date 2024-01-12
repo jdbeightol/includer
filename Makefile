@@ -1,13 +1,14 @@
 include examples.mk
-INSTALL_DIR := $(HOME)/.local/bin
 
-BIN_FILES := pre-process.sh
-INSTALL_FILES := $(patsubst %.sh,$(INSTALL_DIR)/%,$(BIN_FILES))
+BIN_FILE := pre-process.sh
+
+INSTALL_DIR := $(HOME)/.local/bin
+INSTALL_FILES := $(patsubst %.sh,$(INSTALL_DIR)/%,$(BIN_FILE))
 
 $(INSTALL_DIR):
 	@mkdir -p $(INSTALL_DIR)
 
-$(INSTALL_DIR)/%: $(BUILD_DIR)/% $(INSTALL_DIR)
+$(INSTALL_DIR)/%: $(BIN_FILE) $(INSTALL_DIR)
 	@cp -v $< $@
 	@chmod u+x $@
 
@@ -27,4 +28,3 @@ install: $(INSTALL_FILES)
 uninstall:
 	@rm -rvf $(INSTALL_FILES)
 .PHONY: uninstall
-
