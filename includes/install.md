@@ -20,4 +20,4 @@ should be callable as a command using,
 pre-process
 ```
 
-If it tells you that you messed up the command, it's working.
+If it tells you that you are missing an argument then the command is working.

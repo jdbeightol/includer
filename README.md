@@ -3,6 +3,30 @@
 `pre-process.sh` is bash script that can be used to generate files from other
 files by including commented `include` statements.
 
+## Install
+
+To install, use the following makefile command,
+
+```shell
+make install
+```
+
+A customer installation directory can be set by setting the `INSTALL_DIR`
+variable,
+
+```shell
+make install INSTALL_DIR=/my/custom/directory/somewhere/on/my/path
+```
+
+After installing and ensuring the `INSTALL_DIR` is on your path, the script
+should be callable as a command using,
+
+```
+pre-process
+```
+
+If it tells you that you are missing an argument then the command is working.
+
 ## Usage
 To build a file, `DESTINATION` from `SOURCE`, use the following,
 
@@ -51,30 +75,6 @@ there are ways to break this script that I haven't covered.
 Included files will not be pre-processed by default.  If you want to "nest"
 includes, I recommend coordinating such an act with something like make.  See
 the nested example and `examples.mk` for ideas on how to do this.
-
-## Install
-
-To install, use the following makefile command,
-
-```shell
-make install
-```
-
-A customer installation directory can be set by setting the `INSTALL_DIR`
-variable,
-
-```shell
-make install INSTALL_DIR=/my/custom/directory/somewhere/on/my/path
-```
-
-After installing and ensuring the `INSTALL_DIR` is on your path, the script
-should be callable as a command using,
-
-```
-pre-process
-```
-
-If it tells you that you messed up the command, it's working.
 
 ## Examples
 To view and explore the examples in this project, you can use the included
