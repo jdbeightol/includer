@@ -4,4 +4,6 @@
 
 #include includes/usage.md
 
+#include includes/install.md
+
 #include includes/examples.md

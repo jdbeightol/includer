@@ -52,6 +52,30 @@ Included files will not be pre-processed by default.  If you want to "nest"
 includes, I recommend coordinating such an act with something like make.  See
 the nested example and `examples.mk` for ideas on how to do this.
 
+## Install
+
+To install, use the following makefile command,
+
+```shell
+make install
+```
+
+A customer installation directory can be set by setting the `INSTALL_DIR`
+variable,
+
+```shell
+make install INSTALL_DIR=/my/custom/directory/somewhere/on/my/path
+```
+
+After installing and ensuring the `INSTALL_DIR` is on your path, the script
+should be callable as a command using,
+
+```
+pre-process
+```
+
+If it tells you that you messed up the command, it's working.
+
 ## Examples
 To view and explore the examples in this project, you can use the included
 `Makefile` to generate them.  To build all examples, use the following,
@@ -60,6 +84,11 @@ To view and explore the examples in this project, you can use the included
 make all
 ```
 
+Generated examples will be stored in the `examples/` directory. They are
+generated directly from files in the `sources/` directory.  Finally, by
+convention of these examples only, files in the sources directory include
+files from the `includes/` directory.
+
 To build any individual example --whatever your reason, specify the filename
 you wish to build,
 
@@ -67,7 +96,9 @@ you wish to build,
 make examples/example.txt
 ```
 
-The `examples.mk` file includes the necessary targets to build the examples.
+The `examples.mk` file includes the necessary targets to build the examples,
+while the `Makefile` includes phony targets and the logic to install the binary
+under `$HOME/.local/bin` if you would like.
 
 ### README
 As a note, this readme itself is built from included files using the makefile.
