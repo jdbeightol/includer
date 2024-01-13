@@ -1,6 +1,6 @@
 include examples.mk
 
-BIN_FILE := pre-process.sh
+BIN_FILE := includer.sh
 
 INSTALL_DIR := $(HOME)/.local/bin
 INSTALL_FILES := $(patsubst %.sh,$(INSTALL_DIR)/%,$(BIN_FILE))

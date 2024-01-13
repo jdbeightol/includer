@@ -2,11 +2,11 @@
 To build a file, `DESTINATION` from `SOURCE`, use the following,
 
 ```shell
-pre-process <SOURCE> <DESTINATION>
+includer <SOURCE> <DESTINATION>
 ```
 
 Include statements within `SOURCE` are resolved from the current working
-directory at the time of running pre-process.  If this isn't what you want,
+directory at the time of running includer.  If this isn't what you want,
 then be sure to change directories before running the tool.
 
 ### Use Case
@@ -43,6 +43,6 @@ newlines, and the `INCLUDER` itself should be able to be set to any string or
 regular expression that doesn't include grave characters ```, but I'm sure 
 there are ways to break this script that I haven't covered.
 
-Included files will not be pre-processed by default.  If you want to "nest"
+Included files will not be includered by default.  If you want to "nest"
 includes, I recommend coordinating such an act with something like make.  See
 the nested example and `examples.mk` for ideas on how to do this.

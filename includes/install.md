@@ -17,7 +17,7 @@ After installing and ensuring the `INSTALL_DIR` is on your path, the script
 should be callable as a command using,
 
 ```
-pre-process
+includer
 ```
 
 If it tells you that you are missing an argument then the command is working.
